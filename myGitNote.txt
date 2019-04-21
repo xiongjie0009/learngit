@@ -1,0 +1,39 @@
+Xcode是Apple官方IDE，功能非常强大，是开发Mac和iOS App的必选装备，而且是免费的！
+
+cd ~返回home
+cd -返回上一次使用目录
+
+//在当前目录创建一个版本库    pwd命令查看当前目录，mkdir创建目录，cd切换目录
+git init
+// 提交时，如果没有配置版本库的name和email会提示不让提交，命令不需要记，终端会进行提示
+
+git config --global user.name "xiongjie"
+git config --global user.email "xiongjie@naxing.com"
+
+// github上配置你的公钥，在根目录执行以下命令，生成.ssh目录，id_rsa.pub为公钥id_rsa为私钥
+ssh-keygen -t rsa -C "xiongjie@naxing.com"
+
+// 在一行打印一条日志
+git log --pretty=oneline
+
+// 查看库上的版本情况  modified修改  untracked未添加
+git status
+
+//add只是将修改放入暂存区
+git add 文件名
+//commit只会将暂存区的内容提交，其他没有add到暂存区的不会提交
+git commit -m "注释"
+
+git reset --hard 版本号
+// 查看历史记录，包括已经回退的版本情况
+git reflog
+
+// 工作区的内容还原成库上最新版本
+git checkout -- readme.txt
+// 暂存区的内容还原成库上最新版本，add后的内容
+git reset HEAD readme.txt
+
+// 删除哭上的文件，删除后，需要commit提交才会生效
+git rm test.txt
+
+
