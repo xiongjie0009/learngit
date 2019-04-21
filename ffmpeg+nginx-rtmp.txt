@@ -1,0 +1,18 @@
+
+window下搭建流媒体服务器：
+1.下载FFmpeg，http://www.ffmpeg.org/download.html#build-windows
+解压后，配置FFmpeg的环境变量，ffmpeg -version
+2.下载nginx-rtmp，https://github.com/illuspas/nginx-rtmp-win32
+nginx-rtmp的默认端口为1935
+安装好后，执行如下命令，在控制台可看到是否推流成功
+ffmpeg.exe -re -i video.mp4 -f flv rtmp://127.0.0.1:1935/live/123
+
+
+nginx配置虚拟目录
+location /aaa {
+	alias /EasyDarwin/EasyDarwin/www;
+}
+表示在nginx安装磁盘根目录下的/EasyDarwin/EasyDarwin/www文件夹下的静态资源
+root配置的目录会在nginx下的html下寻找
+
+参考：https://blog.csdn.net/mazaiting/article/details/79709753
